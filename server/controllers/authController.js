@@ -10,7 +10,9 @@ module.exports = {
         users.push({id, username, password})
         id++
 
-        res.status(200).send(users)
+        session.user.username = username
+
+        res.status(200).send(session.user)
 
     },
     login: (req, res) =>{
